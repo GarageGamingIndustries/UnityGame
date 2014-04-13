@@ -1,20 +1,21 @@
 ********************************************************************************************************
-*                        Game – Basic ideas                                                            *
+*                        Game ï¿½ Basic ideas                                                            *
 ********************************************************************************************************
 
 NOTE: THESE ARE JUST SOME BASIC IDEAS. PLEASE FEEL FREE TO ADD OR ADAPT AND ENVOLVE AN IDEA BY YOURSELF!
 
 Goal: Creating a LAN/multiplayer game with a REAL long term motivation, based on a deep sandbox experience
 
-Setting: A medieval middle-European landscape (pine forests, rivers, castles, valleys …). Starting “naked” with no gear and no skills in the middle
-of nowhere. Zombies and other monsters seem to scavenge the country and it´s up to the player to find a place in medieval society, master his skills
+Setting: A medieval middle-European landscape (pine forests, rivers, castles, valleys ï¿½). Starting ï¿½nakedï¿½ with no gear and no skills in the middle
+of nowhere. Zombies and other monsters seem to scavenge the country and itï¿½s up to the player to find a place in medieval society, master his skills
 and defend himself against zombies.
+EDIT Mark: No Zombies, just Monsters. Monsters, that are a bit like animals, just different.
 
-Perspective: 3rd Person or 1st Person. Ideal Case: Ability to switch between both options. My favorite is 1st Person because it´s more realistic 
+Perspective: 3rd Person or 1st Person. Ideal Case: Ability to switch between both options. My favorite is 1st Person because itï¿½s more realistic 
 and creates a thicker atmosphere.
 
-Skill-System: A huge amount of skills to discover and train like “learn by doing”. By doing an activity for the first time (example: finding a 
-bow/sword and shoot/swing) the player “discovers the skill and with often usage he increases it.
+Skill-System: A huge amount of skills to discover and train like ï¿½learn by doingï¿½. By doing an activity for the first time (example: finding a 
+bow/sword and shoot/swing) the player ï¿½discovers the skill and with often usage he increases it.
 
 Basic skills: you can discover basic skills without a teacher or learning a profession: Basic Weapon skills (mace, axe), basic general skills 
 (strength, stamina, intelligence, speed), basic various skills (hunting, farming, crafting)
@@ -22,21 +23,23 @@ Basic skills: you can discover basic skills without a teacher or learning a prof
 Expanded skills: you can discover expanded skills only with a teacher or learning a profession: Expanded weapon skills (sword, bow, staves, 
 crossbow), expanded profession skills (weapon smith, armor smith, architect, merchant, alchemy, tailor), expanded various skills (riding)
 
-Inventory: basic inventory is about 10 – 15 space-units big. The player can wear bag packs with a space up to 40 spaces. 
+Inventory: basic inventory is about 10 ï¿½ 15 space-units big. The player can wear bag packs with a space up to 40 spaces. 
 	Gear: The Player has 2 weapon slots (1 Two hand, 2 One hand, 1 One hand + Shield), 		breast and leg armor, a helmet, 2 rings and
 	an amulet. 
 
 Sandbox Elements: the player should always have the motivation to enforce and train his character so we have to give him various sandbox elements:
-	Housing: Buying a house in one of the two large cities. You´ll have to be a citizen of the city	and invest a lot of money into it (buying 
-	the house, furniture …)
+	Housing: Buying a house in one of the two large cities. Youï¿½ll have to be a citizen of the city	and invest a lot of money into it (buying 
+	the house, furniture ï¿½)
 	Quests: The player can make quests to obtain money or other rewards. Everywhere in the 	world are people who need help.
 	Hunting: Hunt in the large forests for deer and other animals to sell their skin.
 
-Gathering: Gather materials from the rich resources of the landscape like wood, stone, soil, water, herbs, minerals, food, …
+Gathering: Gather materials from the rich resources of the landscape like wood, stone, soil, water, herbs, minerals, food, ï¿½
 
-Crafting: Combine items you have found/created to other items: Plank + Nails = new weapon , stick+stone = hammer, … Crafting will take time based 
+Crafting: Combine items you have found/created to other items: Plank + Nails = new weapon , stick+stone = hammer, ï¿½ Crafting will take time based 
 on your crafting skill.
 
-Professions: By becoming a citizen of a large town you can visit a smith/architect/farmer/… to learn his profession. There will be a skill for 
+Professions: By becoming a citizen of a large town you can visit a smith/architect/farmer/ï¿½ to learn his profession. There will be a skill for 
 each profession and by increasing it the player will learn new recipes.
 
+EDIT Mark:
+Level-System: Gaining Experience for the Level by training the own Basic skills, hunting, maybe even by selling the hunted flesh, coat, (...), berrys on the Villagemarket.
