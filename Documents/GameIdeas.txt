@@ -43,3 +43,4 @@ each profession and by increasing it the player will learn new recipes.
 
 EDIT Mark:
 Level-System: Gaining Experience for the Level by training the own Basic skills, hunting, maybe even by selling the hunted flesh, coat, (...), berrys on the Villagemarket.
+The higher the Level - the more you have to sell or the quality must be better (complete Hammer instead of Stick + Stone)
