@@ -1010,11 +1010,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 119.96785
+      value: 119.982574
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2372.45898
+      value: 2372.34741
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1022,11 +1022,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1863,6 +1863,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1954679156}
   - 95: {fileID: 1954679157}
+  - 64: {fileID: 1954679158}
+  - 64: {fileID: 1954679159}
   m_Layer: 0
   m_Name: WoodStoneHouse1
   m_TagString: Untagged
@@ -1901,6 +1903,32 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!64 &1954679158
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1954679155}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
+--- !u!64 &1954679159
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1954679155}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300006, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
 --- !u!1 &1983527203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,6 +1938,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1983527204}
   - 95: {fileID: 1983527205}
+  - 64: {fileID: 1983527207}
+  - 64: {fileID: 1983527206}
   m_Layer: 0
   m_Name: WoodStoneHouse2
   m_TagString: Untagged
@@ -1923,8 +1953,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
   m_PrefabInternal: {fileID: 819986479}
   m_GameObject: {fileID: 1983527203}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3214.3374, y: 119.96785, z: 2372.45898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3214.3374, y: 119.982574, z: 2372.34741}
   m_LocalScale: {x: .0123078432, y: .0123078432, z: .0123078432}
   m_Children:
   - {fileID: 2575203}
@@ -1948,6 +1978,32 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!64 &1983527206
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1983527203}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300006, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
+--- !u!64 &1983527207
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1983527203}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: df03c1cac52a3de4e8ec9b2a4eac14cf, type: 3}
 --- !u!1 &2019974224
 GameObject:
   m_ObjectHideFlags: 0
