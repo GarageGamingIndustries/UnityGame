@@ -39,11 +39,11 @@ Hunting: Hunt in the large forests for deer and other animals to sell their skin
 Gathering: Gather materials from the rich resources of the landscape like wood, stone, soil, water, herbs, minerals, food, �
 
 Crafting: Combine items you have found/created to other items: Plank + Nails = new weapon , stick+stone = hammer, � Crafting will take time based 
+	on your crafting skill.
 
 Menu-AnimationIdea: At the beginning we see just several pixels, a slow zoomout to the Menu. After clicking a Startbutton the camera goes
 	backwards and shows that the menu is just a wall in the map. After that the camera flies over the wall and flies very fast to the character.
 	Maybe the same thing completely backwards for going back in the menu.
-	on your crafting skill.
 
 Professions: By becoming a citizen of a large town you can visit a smith/architect/farmer/� to learn his profession. There will be a skill for 
 	each profession and by increasing it the player will learn new recipes.
