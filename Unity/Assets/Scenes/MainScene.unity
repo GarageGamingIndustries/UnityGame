@@ -205,6 +205,7 @@ GameObject:
   - 114: {fileID: 46450793}
   - 114: {fileID: 46450792}
   - 114: {fileID: 46450796}
+  - 114: {fileID: 46450797}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Untagged
@@ -340,6 +341,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   deathClip: {fileID: 0}
+--- !u!114 &46450797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 46450790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4cff4660b0c6ca44919f6beac4ebb38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillAttack: 0
+  SkillWalk: 0
+  SkillJump: 1
+  Iterator: 0
+  IteratorMAX: 0
 --- !u!1 &92263662
 GameObject:
   m_ObjectHideFlags: 0
