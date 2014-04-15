@@ -11,10 +11,12 @@ public class PlayerHealth : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+	public float getHp() {
+				return health;
+		}
 	// Update is called once per frame
 	void Update () {
-	
+		//TakeDamage (0.1f);
 		if (health <= 0f) 
 		{
 			if(!playerDead)

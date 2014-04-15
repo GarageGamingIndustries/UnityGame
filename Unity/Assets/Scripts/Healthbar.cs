@@ -7,16 +7,15 @@ public class Healthbar : MonoBehaviour {
 	Texture2D texture;
 	Color redColor = Color.red;
 	Color greenColor = Color.green;
-	//GameObject buddy = GameObject.Find ("Player");
-	//PlayerHealth p = buddy.GetComponent<PlayerHealth> ();
-	PlayerHealth p = new PlayerHealth();
+
+	public PlayerHealth script;
 
 	
 	void Start()
 	{
 		//GameObject Player = GameObject.Find ("Player");
 		//PlayerHealth p = Player.GetComponent <PlayerHealth> ();
-
+		script = GetComponent<PlayerHealth>();
 		texture = new Texture2D(1, 1);
 		texture.SetPixel(1, 1, greenColor);
 	}
@@ -24,12 +23,12 @@ public class Healthbar : MonoBehaviour {
 	private void Update()
 	{
 		
-		if (p.health > 50)
+		if (script.getHp() > 50)
 		{
 			texture.SetPixel(1, 1, greenColor);
 		}
 
-		if (p.health < 50)
+		if (script.getHp() < 50)
 		{
 			texture.SetPixel(1, 1, redColor);
 		}
@@ -42,6 +41,6 @@ public class Healthbar : MonoBehaviour {
 		texture.Apply();
 		
 		style.normal.background = texture;
-		GUI.Box(new Rect(0, 0, (p.health*3), 50), new GUIContent(""), style);
+		GUI.Box(new Rect(0, 0, (script.getHp()*3), 50), new GUIContent(""), style);
 	}
 }
