@@ -3,21 +3,19 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public float health = 100f;
-	public AudioClip deathClip;
+	public static float actualHealth = 100f;
+	public static float maxHealth = 100f;
+	//public AudioClip deathClip;
 	private bool playerDead;
 
 	// Use this for initialization
 	void Start () {
 	
 	}
-	public float getHp() {
-				return health;
-		}
 	// Update is called once per frame
 	void Update () {
-		//TakeDamage (0.1f);
-		if (health <= 0f) 
+		TakeDamage (0.1f);
+		if (actualHealth <= 0f) 
 		{
 			if(!playerDead)
 			{
@@ -40,6 +38,6 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void TakeDamage(float amount)
 	{
-		health -= amount;
+		actualHealth -= amount;
 	}
 }
