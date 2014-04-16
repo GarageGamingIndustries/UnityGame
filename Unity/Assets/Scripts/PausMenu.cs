@@ -3,29 +3,37 @@ using System.Collections;
 
 public class PausMenu : MonoBehaviour {
 
+	bool pauseMenu;
+
+	void Update() 
+	{
+		if(Input.GetButtonDown("PauseMenu")) 
+		{
+
+			pauseMenu = !pauseMenu;
+		}
+		
+	}
+
+	void OnGUI() 
+	{
+		var centeredStyle = GUI.skin.GetStyle("Box");
+		centeredStyle.alignment = TextAnchor.UpperCenter;
+		if (pauseMenu) 
+		{
+			GUI.Box (new Rect (Screen.width / 2 - 75, Screen.height / 2 - 25, 150, 150), "Menu", centeredStyle);
 
 
-		void OnGUI() {
-		var SwitchOn = false;
-			if(Input.GetKey(KeyCode.Escape)) {
-
-				SwitchOn = true;
-				//Make a background box
-				if(SwitchOn.Equals(true)) {
-					GUI.Box(new Rect(10,10,100,90),"Menu");
-				
-					//Make the first button. If its is pressed, Application.Loadlevel(1) will be executed
-					if(GUI.Button(new Rect(20,40,80,20), "Pause")) {
-
-					}
-
-					//Make the second button
-					if(GUI.Button (new Rect(20,70,80,20), "Level 1")) {
-						Application.LoadLevel(1);
-					}
-				}
+			if (GUI.Button (new Rect (Screen.width / 2 - 50 + 10 , Screen.height / 2 + 40, 80, 20), "Level 1")) {
+				Application.LoadLevel (1);
+			}
+			if (GUI.Button (new Rect (Screen.width / 2 - 50 + 10 , Screen.height / 2 + 70, 80, 20), "Exit Game")) {
+				Application.Quit();
 			}
 		}
 
+
+	}
+
+
 }
-	

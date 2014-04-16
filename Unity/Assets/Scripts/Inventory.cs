@@ -6,11 +6,16 @@ public class Inventory : MonoBehaviour {
 	public int slotsX,slotsY;
 	public GUISkin skin;
 	public List<Item> inventory = new List<Item>();
-	public List<Item> slots = new List<Item>();
+	public List<Item> slots = new List<Item>();	
 	private bool showInventory;
 	private ItemDatabase database;
 	private bool showTooltip;
 	private string tooltip;
+
+	private bool draggingItem;
+	private Item draggedItem;
+	private int prevIndex;
+
 
 	void Start () {
 		for(int i = 0; i <(slotsX * slotsY); i++) 
@@ -22,8 +27,8 @@ public class Inventory : MonoBehaviour {
 		database = GameObject.FindGameObjectWithTag("Item Database").GetComponent<ItemDatabase>();
 		AddItem (1);
 		AddItem (0);
-		RemoveItem (1);
-		print (InventoryContains (0));
+		AddItem (0);
+
 
 	}
 	void Update() 
@@ -36,22 +41,28 @@ public class Inventory : MonoBehaviour {
 	}
 	void OnGUI() 
 	{
+
 		tooltip = "";
 		GUI.skin = skin;
 		if(showInventory)
 		{
 			DrawInventory();
+			if (showTooltip) 			
+				GUI.Box(new Rect(Event.current.mousePosition.x + 15f,Event.current.mousePosition.y,200,200), tooltip, skin.GetStyle("Tooltip"));
+
+
 		}
-		if (showTooltip) 
+		if(draggingItem)
 		{
-			GUI.Box(new Rect(Event.current.mousePosition.x + 20,Event.current.mousePosition.y,200,200), tooltip, skin.GetStyle("Tooltip"));
+			GUI.DrawTexture(new Rect(Event.current.mousePosition.x ,Event.current.mousePosition.y,50,50), draggedItem.itemIcon);
 		}
+	
 	}
 
 	void DrawInventory() 
 	{
 		int i = 0;
-
+		Event e = Event.current;
 		for(int y = 0; y < slotsY; y++)
 		{
 			for(int x = 0; x < slotsX; x++) 
@@ -63,13 +74,41 @@ public class Inventory : MonoBehaviour {
 				if(slots[i].itemName != null) 
 				{
 					GUI.DrawTexture(slotRect,slots[i].itemIcon);
-					if(slotRect.Contains(Event.current.mousePosition))
+					if(slotRect.Contains(e.mousePosition))
 					{
 						tooltip = CreateTooltip (slots[i]);
 						showTooltip = true;
+						if(e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
+						{
+							draggingItem = true;
+							prevIndex = i;
+							draggedItem = slots[i];
+							inventory[i] = new Item();
+
+						}
+						if(e.type == EventType.mouseUp && draggingItem )
+						{
+							inventory[prevIndex] = inventory[i];
+							inventory[i] = draggedItem;
+							draggingItem = false;
+							draggedItem = null;
+						}
+
 
 					}
+				} else 
+				{
+					if(slotRect.Contains(e.mousePosition))
+					{
+						if(e.type == EventType.mouseUp && draggingItem)
+						{
+							inventory[i] = draggedItem;
+							draggingItem = false;
+							draggedItem = null;
+						}
+					}
 				}
+
 				if(tooltip == "")
 				{
 					showTooltip = false;
