@@ -207,6 +207,7 @@ GameObject:
   - 114: {fileID: 46450796}
   - 114: {fileID: 46450797}
   - 114: {fileID: 46450798}
+  - 114: {fileID: 46450799}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -367,6 +368,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fcd9182bc083e041a277a654617a254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &46450799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 46450790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cf415791e84b84db54655aeeb70dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 406862618}
+  attackTimer: 0
+  coolDown: 0
 --- !u!1 &92263662
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +639,9 @@ GameObject:
   - 23: {fileID: 406862620}
   - 65: {fileID: 406862619}
   - 114: {fileID: 406862624}
+  - 114: {fileID: 406862625}
+  - 114: {fileID: 406862626}
+  - 114: {fileID: 406862627}
   m_Layer: 0
   m_Name: EnemyCube
   m_TagString: Enemy
@@ -690,7 +708,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 406862618}
   m_LocalRotation: {x: -.154044718, y: .639793396, z: -.731887877, w: .176846802}
-  m_LocalPosition: {x: 3235.39038, y: 120.794884, z: 2372.6814}
+  m_LocalPosition: {x: 3235.3374, y: 120.92347, z: 2358.40527}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -708,6 +726,43 @@ MonoBehaviour:
   target: {fileID: 0}
   moveSpeed: 1
   rotationSpeed: 1
+  maxDistance: 0
+--- !u!114 &406862625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 406862618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc54dcfb79379034b84264802aa5264c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &406862626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 406862618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc54dcfb79379034b84264802aa5264c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &406862627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 406862618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dab331f741957143841be7e8ad3f559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 46450790}
+  attackTimer: 0
+  coolDown: 0
 --- !u!1001 &418806363
 Prefab:
   m_ObjectHideFlags: 0

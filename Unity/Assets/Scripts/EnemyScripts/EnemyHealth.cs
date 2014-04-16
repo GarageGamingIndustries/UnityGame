@@ -1,41 +1,42 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour {
+public class EnemyHealth : MonoBehaviour {
 
 	public static float actualHealth = 100f;
 	public static float maxHealth = 100f;
-	//public AudioClip deathClip;
-	private bool playerDead;
+
+	private bool enemyDead;
 
 	// Use this for initialization
 	void Start () {
 	
 	}
+	
 	// Update is called once per frame
 	void Update () {
 
 		if (actualHealth <= 0f) 
 		{
-			if(!playerDead)
+			if(!enemyDead)
 			{
-				PlayerDying();
+				EnemyDying();
 			}else
 			{
-				PlayerDead();
+				EnemyDead();
 			}
 		}
 	}
 
-	void PlayerDying()
+	void EnemyDying()
 	{
-		playerDead = true;
+		enemyDead = true;
 	}
-	void PlayerDead()
+	void EnemyDead()
 	{
 		// playerMovement.enabled = false;
 	}
-
+	
 	public void TakeDamage(float amount)
 	{
 		actualHealth -= amount;
