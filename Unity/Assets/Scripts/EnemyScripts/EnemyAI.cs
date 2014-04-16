@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour {
     public int moveSpeed;
     public int rotationSpeed;
 	public float maxDistance;
+	public bool isFollowing, isPulled;
 
     private Transform myTransform;
 
@@ -21,21 +22,38 @@ public class EnemyAI : MonoBehaviour {
         GameObject gO = GameObject.FindGameObjectWithTag("Player");
         target = gO.transform;
 		maxDistance = 1.5f;
+		isFollowing = false;
+		isPulled = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.DrawLine(target.position, myTransform.position, Color.yellow);
+		Debug.DrawLine(target.position, myTransform.position, Color.yellow);
 
 		float distance = Vector3.Distance (target.position, myTransform.position);
-		float pullDistance = Vector3.Distance (target.transform.position, transform.position);
-		if (distance > maxDistance && pullDistance < 10) {
-						// Look at target
-						myTransform.rotation = Quaternion.Slerp (myTransform.rotation, Quaternion.LookRotation (target.position - myTransform.position), rotationSpeed * Time.deltaTime);
+		Debug.Log (distance);
 
-						// Move towards target
-						myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
-				}
+		float pullDistance = Vector3.Distance (target.transform.position, transform.position);
+		if (pullDistance < 10) {
+			isPulled = true;
+		}
+
+		if (isFollowing == true && distance > 50) {
+			isFollowing = false;
+			isPulled = false;
+		}
+		else
+		{
+			if (distance > maxDistance && isPulled == true ) {
+				isFollowing = true;
+
+				// Look at target
+				myTransform.rotation = Quaternion.Slerp (myTransform.rotation, Quaternion.LookRotation (target.position - myTransform.position), rotationSpeed * Time.deltaTime);
+
+				// Move towards target
+				myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+			}
+		}
 	}
 }
