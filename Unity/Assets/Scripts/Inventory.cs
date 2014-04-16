@@ -9,7 +9,8 @@ public class Inventory : MonoBehaviour {
 	public List<Item> slots = new List<Item>();
 	private bool showInventory;
 	private ItemDatabase database;
-
+	private bool showTooltip;
+	private string tooltip;
 
 	void Start () {
 		for(int i = 0; i <(slotsX * slotsY); i++) 
@@ -19,9 +20,10 @@ public class Inventory : MonoBehaviour {
 		}
 
 		database = GameObject.FindGameObjectWithTag("Item Database").GetComponent<ItemDatabase>();
-		inventory[0] = database.items[0];
-		inventory[1] = database.items[1];
-	
+		AddItem (1);
+		AddItem (0);
+		RemoveItem (1);
+		print (InventoryContains (0));
 
 	}
 	void Update() 
@@ -30,18 +32,19 @@ public class Inventory : MonoBehaviour {
 		{
 			showInventory = !showInventory;
 		}
+
 	}
 	void OnGUI() 
 	{
+		tooltip = "";
 		GUI.skin = skin;
 		if(showInventory)
 		{
 			DrawInventory();
 		}
-		for(int i = 0; i < inventory.Count; i++) 
+		if (showTooltip) 
 		{
-			//GUI.Label(new Rect(10,i*20,200,50), inventory[i].itemName);
-
+			GUI.Box(new Rect(Event.current.mousePosition.x + 20,Event.current.mousePosition.y,200,200), tooltip, skin.GetStyle("Tooltip"));
 		}
 	}
 
@@ -60,13 +63,76 @@ public class Inventory : MonoBehaviour {
 				if(slots[i].itemName != null) 
 				{
 					GUI.DrawTexture(slotRect,slots[i].itemIcon);
+					if(slotRect.Contains(Event.current.mousePosition))
+					{
+						tooltip = CreateTooltip (slots[i]);
+						showTooltip = true;
+
+					}
 				}
-
-
-
+				if(tooltip == "")
+				{
+					showTooltip = false;
+				}
 				i++;
 			}
 
 		}
 	}
+
+	string CreateTooltip(Item item)
+	{
+		tooltip = "<color=#00FF22>" + item.itemName + "</color>\n\n" +"<color=#f2f2f2>" + item.itemDesc + "</color>\n\n";
+		return tooltip;
+	}
+	void RemoveItem(int id)
+	{
+		for(int i = 0; i < inventory.Count; i++) 
+		{
+			if(inventory[i].itemID == id)
+			{
+				inventory[i] = new Item();
+				break;
+			}
+		}
+
+
+	}
+	void AddItem(int id)
+	{
+		for (int i = 0; i < inventory.Count; i++) 
+		{
+			if (inventory[i].itemName == null) 
+			{
+			
+				for(int j = 0; j < database.items.Count; j++)
+				{
+					if(database.items[j].itemID == id) 
+					{
+						inventory[i] = database.items[j];
+					}
+				}
+				break;
+			}
+		}
+
+	}
+
+	bool InventoryContains(int id)
+	{
+		bool result = false;
+		for (int i = 0; i < inventory.Count; i++) 
+		{				
+			result = inventory[i].itemID == id;
+			if(result) 
+			{
+				break;
+			}
+		}
+		return result;
+
+	}
+
+
+
 }
