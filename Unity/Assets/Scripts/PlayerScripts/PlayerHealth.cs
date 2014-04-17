@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (actualHealth <= 0f) 
+		if (PlayerHealth.actualHealth < 0.0f) 
 		{
 			if(!playerDead)
 			{
@@ -24,7 +24,10 @@ public class PlayerHealth : MonoBehaviour {
 			{
 				PlayerDead();
 			}
+			//If Dead - HP shown as -1 HP
+			PlayerHealth.actualHealth = -1.0f;
 		}
+
 	}
 
 	void PlayerDying()
