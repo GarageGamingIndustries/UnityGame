@@ -750,7 +750,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 406862618}
   m_LocalRotation: {x: -.154044718, y: .639793396, z: -.731887877, w: .176846802}
-  m_LocalPosition: {x: 3235.3374, y: 120.92347, z: 2358.40527}
+  m_LocalPosition: {x: 3220.04761, y: 123.066757, z: 2378.03589}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -807,6 +807,9 @@ MonoBehaviour:
   target: {fileID: 46450790}
   attackTimer: 0
   coolDown: 0
+  EnemyDamage: 0
+  CritChance: 0
+  CritDmg: 0
 --- !u!1001 &418806363
 Prefab:
   m_ObjectHideFlags: 0
