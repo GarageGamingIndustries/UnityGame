@@ -9,6 +9,9 @@ public class QuestDatabase : MonoBehaviour {
 	void Start()
 	{
 		quests.Add (new Quest("Raging Fire", 0, "Go to the Cave of Fire and kill all Raging Fires!", Quest.QuestType.Solo)); 
+		quests.Add (new Quest("The Fire Lord", 1, "Go to the Cave of Fire and kill all Raging Fires! to the Cave of Fire and kill all Raging Fires!", Quest.QuestType.Group)); 
+		quests.Add (new Quest("alles töten!", 2, "Go to the Cave of Fire and kill all Raging Fires! to the Cave of Fire and kill all Raging Fires! to the Cave of Fire and kill all Raging Fires!", Quest.QuestType.Solo)); 
+	
 	}
 
 }

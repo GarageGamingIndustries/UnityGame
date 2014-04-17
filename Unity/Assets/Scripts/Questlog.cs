@@ -18,7 +18,11 @@ public class Questlog : MonoBehaviour {
 			questLog.Add(new Quest());
 		}
 		questDatabase = GameObject.FindGameObjectWithTag("Quest Database").GetComponent<QuestDatabase>();
+
 		AddQuest (0);
+		AddQuest (1);
+		AddQuest (2);
+
 	}
 	
 	// Update is called once per frame
@@ -37,38 +41,52 @@ public class Questlog : MonoBehaviour {
 		{
 			var centeredStyle = GUI.skin.GetStyle("Box");
 			centeredStyle.alignment = TextAnchor.UpperCenter;
-			GUI.Box(new Rect(150,70,200,20), "asd" + questLog[0].questName);
+
 			GUI.Box(new Rect(150, 50, 200,100),"Questlog");
 			GUI.Box(new Rect(150, 150, 200,300),"");
-			GUI.Label( new Rect( 150, 150, 200, 280 ), " sfbkjldsfkjlasdklfdblkjadsf vlkdfbkl " +
-				"\n sdgfghsdfasdsdfdffglkjl werfpiodgpodfob a skjdsdföbkj fdbkj sfdjk sd fbkjl " +
-				"wer jsfgpodgöpnkbvsd kjsaf lköjsbölkjfgbökljsafd öjkd bkjdfg lkö");
-			if(GUI.Button(new Rect(270,430,80,20),"Delete"))
+
+			DrawQuest();
+		}
+
+	}
+	void DrawQuest() 
+	{
+		string clickedQuest;
+		Event e = Event.current;
+		for (int i = 0; i < questLog.Count; i++) {
+			Rect questRect = new Rect(150,70+(i*20),200,20);	
+			GUI.Label (new Rect (150, 70 + (i * 20), 200, 20), "" + questLog [i].questName);
+			if(questRect.Contains(e.mousePosition))
 			{
-			
-			}
-			if(GUI.Button(new Rect(150,430,80,20),"Read"))
-			{
-			
+				if(e.button == 0)
+				{
+					clickedQuest = "" + questLog[i].questDesc;
+					GUI.Label (new Rect (150, 70 + (i * 20), 200, 20), "<color=#FF0000>" + questLog [i].questName + "</color>");
+					GUI.Label (new Rect (150, 150, 190,300),"" + clickedQuest);
+				}
 			}
 		}
+
 	}
 	void AddQuest(int id)
 	{
 		for (int i = 0; i < questLog.Count; i++) 
 		{
 			if (questLog[i].questName == null) 
-			
+			{
 				
 				for(int j = 0; j < questDatabase.quests.Count; j++)
 				{
 					if(questDatabase.quests[j].questID == id) 
 					{
 						questLog[i] = questDatabase.quests[j];
+
 					}
 				}
 				break;
 			}
+		}
+
 	}
 		
 
