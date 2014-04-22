@@ -12,16 +12,16 @@ Open Tasks:
   - edit character controller (Player) --> delete mouse
   - BUG: EnemyCube stops when standing behind it || BUG: FLYING TO SPAAAAAAAAAAAAACE
   - Enemy Spawn (Zone: Spawning enemies when entering area(certain distance)) and Enemy running back to spawn
-  - use Items
+  - DONE in parts: use Items
   - gear Items
-  - Import weapon Asset(https://www.assetstore.unity3d.com/#/content/15834) and AttackAnimation
+  - DONE: Import weapon Asset(https://www.assetstore.unity3d.com/#/content/15834) and AttackAnimation
   - download EnvironmentPack/Models/...
   - Basic character model (https://www.assetstore.unity3d.com/#/content/3174)
   - NPC-scripts (for giving quests, trad)
   - Replace Icons (http://game-icons.net/)
   - MultiPlayer (https://www.assetstore.unity3d.com/#/content/1786)
-  - Stamina (lowered when jump, sprint, attack, ...)
-  - Sprinting
+  - DONE in parts: Stamina (lowered when jump, sprint, attack, ...)
+  - DONE: Sprinting
   - 
   
 Gameplay decisions/ideas:
